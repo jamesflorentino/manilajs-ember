@@ -1,0 +1,84 @@
+.horizontal-container {
+  width: 100%;
+  top: 40px;
+  bottom: 0;
+  position: absolute;
+  overflow-y: hidden;
+  overflow-x: scroll;
+  box-sizing: border-box;
+  white-space: nowrap;
+}
+
+.column {
+  height: 100%;
+  overflow: hidden;
+  background: #ddd;
+  position: relative;
+  width: 25%;
+  display: inline-block;
+  white-space: normal;
+}
+
+.column.double {
+  width: 88%;
+  }
+
+.column-body {
+  position: absolute;
+  top: 40px;
+  bottom: 0;
+  width: 100%;
+  overflow: auto;
+}
+
+.column .title {
+  height: 40px;
+  padding: 0 20px;
+  background: white;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+}
+
+.column .title .nav {
+  margin-top: 5px;
+}
+
+.column .media {
+  padding: 10px;
+  margin: 0;
+}
+
+.column .media-heading {
+  line-height: 1;
+  }
+
+.column .media-meta {
+  clear: both;
+  margin: 0;
+  margin-bottom: 0;
+  font-size: 12px;
+  padding: 4px 5px;
+}
+
+.column .media ~ .media {
+  border-top: 1px solid #ccc;
+}
+
+.column .media a {
+  color: inherit;
+  text-decoration: none;
+}
+
+.full-view {
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  }
+
+.long {
+  height: 1000px;
+  background: gray;
+  width: 100%;
+  }

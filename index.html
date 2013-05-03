@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>ManilaJS EmberJS Demo</title>
+    <meta charset="utf-8" />
+    <link rel="stylesheet" href="/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="/css/font-awesome.min.css" />
+    <link rel="stylesheet" href="/css/style.css" />
+  </head>
+  <body>
+
+    <script type="text/x-handlebars">
+      {{outlet}}
+    </script>
+
+    <script type="text/x-handlebars" id="contacts">
+      <table class="table">
+        <tr>
+          <th>Twitter Pic</th>
+          <th>First Name</th>
+          <th>Last Name</th>
+          <th>Twitter username</th>
+          <th>Action</th>
+        </tr>
+        {{#each App.users}}
+          {{view App.ContactView contentBinding="this"}}
+        {{/each}}
+        <tr>
+        <td colspan="5">
+        <button {{action createContact target="App.contactsController"}} class="btn">Add Contact <i class="icon-plus"></i></button></td>
+        </tr>
+      </table>
+    </script>
+
+    <script type="text/x-handlebars" id="contact">
+      <tr>
+        {{#if view.isEditing}}
+          <td></td>
+          <td>{{view App.AutoFocusTF class="input-block-level" valueBinding="firstName" placeholder="John"}}</td>
+          <td>{{input type="text" class="input-block-level" value=lastName placeholder="Smith"}}</td>
+          <td>{{input type="text" class="input-block-level" value=twitter placeholder="twitter"}}</td>
+          <td>
+          <button {{action remove target="view"}}class="btn btn-danger"><i class="icon-trash"></i></button>
+          <button {{action done target="view"}} class="btn"><i class="icon-check"></i></button></td>
+        {{else}}
+          <td>{{twitterPic twitter class="img-polaroid img-circle"}}</td>
+          <td>{{firstName}}</td>
+          <td>{{lastName}}</td>
+          <td>{{twitter}}</td>
+          <td>
+          <button {{action remove target="view"}}class="btn btn-danger"><i class="icon-trash"></i></button>
+          <button {{action edit target="view"}} class="btn"><i class="icon-pencil"></i></button></td>
+        {{/if}}
+        </tr>
+    </script>
+
+    <script type="text/javascript" src="/js/jquery.js"></script>
+    <script type="text/javascript" src="/js/handlebars.js"></script>
+    <script type="text/javascript" src="/js/ember.js"></script>
+    <script type="text/javascript" src="/js/app.js"></script>
+  </body>
+</html>

@@ -1,0 +1,11 @@
+.anim-slide-out {
+  -webkit-animation: slide-out 1000ms;
+}
+@-webkit-keyframes slide-out {
+  from {
+    -webkit-transform: translatex(0);
+  }
+  to {
+    -webkit-transform: translatex(100%);
+  }
+}
