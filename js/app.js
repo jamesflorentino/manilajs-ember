@@ -2,7 +2,7 @@ App = Ember.Application.create({
   ready: function() {
     var json;
     try {
-      json = JSON.parse(localStorage.getItem('contacts'));
+      json = JSON.parse(localStorage.getItem('contacts')) || [];
     } catch(err) {
       json = [];
     }
