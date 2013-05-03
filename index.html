@@ -40,16 +40,18 @@
           <td>{{input type="text" class="input-block-level" value=lastName placeholder="Smith"}}</td>
           <td>{{input type="text" class="input-block-level" value=twitter placeholder="twitter"}}</td>
           <td>
-          <button {{action done target="view"}} class="btn"><i class="icon-check"></i></button></td>
+          <button {{action done target="view"}} class="btn"><i class="icon-check"></i></button>
           <button {{action remove target="view"}}class="btn btn-danger"><i class="icon-trash"></i></button>
+          </td>
         {{else}}
           <td>{{twitterPic twitter class="img-polaroid img-circle"}}</td>
           <td>{{firstName}}</td>
           <td>{{lastName}}</td>
           <td>{{twitter}}</td>
           <td>
-          <button {{action edit target="view"}} class="btn"><i class="icon-pencil"></i></button></td>
+          <button {{action edit target="view"}} class="btn"><i class="icon-pencil"></i></button>
           <button {{action remove target="view"}}class="btn btn-danger"><i class="icon-trash"></i></button>
+          </td>
         {{/if}}
         </tr>
     </script>
