@@ -24,6 +24,12 @@ App.contactsController = Ember.Controller.create({
   }
 });
 
+App.IndexRoute = Ember.Route.extend({
+  redirect: function() {
+    this.transitionTo('contacts');
+  }
+});
+
 App.Router.map(function() {
   this.resource('contacts');
 });
